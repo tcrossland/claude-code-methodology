@@ -9,8 +9,6 @@ here (§8). British English; dates DD/MM/YYYY.
 - (none — no active plan)
 
 ## Next
-- [ ] Decide the licence — chore · value M · effort L — why now: the README marks it undecided,
-      and the choice gates distribution and the plugin direction.
 - [ ] Dogfood §6 — add a consistency-check hook — debt · value H · effort M — why now: §6/Appendix C
       cast hooks as the CI substitute, yet `.claude/settings.json` ships none; a `PostToolUse` hook on
       `docs/*.md` that checks `§N`/appendix-letter refs resolve and flags US spellings would automate

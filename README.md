@@ -44,5 +44,6 @@ doc) with the document as its rationale.
 
 ## Licence
 
-Not yet chosen. The choice interacts with distribution and monetisation plans, so it is a
-deliberate decision rather than a default.
+[Apache-2.0](LICENSE). Permissive — use, modify, and redistribute freely, including
+commercially; the methodology spreads by adoption. The licence grants no rights to the
+project's name or marks (`LICENSE` §6) and carries an explicit patent grant (§3).

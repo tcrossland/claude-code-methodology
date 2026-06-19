@@ -24,3 +24,5 @@ and the edits made while assembling this version were never separate releases.
   ritual commands, the read-only `code-reviewer` subagent, and a path-scoped Definition of Done
   (consistency and descriptive-claim accuracy, no build/test) that `/accept` checks against.
 - "Dogfooding" section in `README.md` explaining that the repo is built with its own methodology.
+- Apache-2.0 licence (`LICENSE`, `NOTICE`): the methodology is free to use, modify, and
+  redistribute, including commercially; the `README.md` Licence section records the choice.
