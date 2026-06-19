@@ -26,6 +26,9 @@ here (§8). British English; dates DD/MM/YYYY.
       context-cost thesis is left unfinished on the tool side (trust lives in the security item).
 
 ## Later / maybe
+- Christen the methodology — choose the name and command/plugin namespace — chore · value M · effort L
+  — why now: the plugin needs a name (`plugin.json` `name` plus the `/<name>:command` namespace) and
+  renaming after publish is costly; settle on a working name now and lock it when the plugin ships.
 - Build the methodology as a plugin (the stated endpoint — `docs/packaging-as-a-plugin.md`) — feat ·
   value H · effort H — why now: deferred until the unpackaged setup has earned its pieces through
   real use ("Recommended sequencing"); note the Definition of Done must ship as a skill or a
