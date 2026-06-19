@@ -19,6 +19,14 @@ This repository is the methodology itself: reference docs, a CLAUDE.md template,
 - `CHANGELOG.md` — user-facing changes (Keep a Changelog, SemVer).
 - `docs/backlog.md` — ordered candidate work (§8 / Appendix F).
 
+## Conventions
+
+- Commits: Conventional Commits, imperative mood, one concern per commit. The methodology is
+  the product, so type by what changed for a reader — `feat` new guidance/artefact, `fix`
+  corrected guidance, `refactor` restructuring, `chore` repo plumbing; reserve `docs` for
+  trivial infra. Types mirror the backlog's feat/fix/debt/chore (§8) and pre-sort into
+  CHANGELOG categories at `/release`.
+
 ## Working agreement
 
 These rules govern *how* we work, not what the code does. Global working rules
