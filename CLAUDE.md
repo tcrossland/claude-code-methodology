@@ -26,6 +26,8 @@ This repository is the methodology itself: reference docs, a CLAUDE.md template,
   corrected guidance, `refactor` restructuring, `chore` repo plumbing; reserve `docs` for
   trivial infra. Types mirror the backlog's feat/fix/debt/chore (§8) and pre-sort into
   CHANGELOG categories at `/release`.
+- Internal/private material lives in gitignored `docs/local/`; never name or describe its
+  contents in tracked files or commit messages — use neutral "local" terminology.
 
 ## Working agreement
 
