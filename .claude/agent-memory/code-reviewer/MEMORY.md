@@ -1,2 +1,3 @@
 - [Repo shape and review focus](project-repo-shape.md) — what this repo is and the load-bearing invariants to check every review
 - [Recurring defect patterns](feedback-recurring-defects.md) — the prose/consistency defect classes that actually show up here
+- [Plugin-cannot-bundle-rules claim](project-plugin-rules-claim.md) — the verified empirical claim and how its wording must stay honest

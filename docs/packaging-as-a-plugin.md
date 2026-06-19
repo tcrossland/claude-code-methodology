@@ -44,6 +44,8 @@ my-methodology/
     └── git-guard.sh
 ```
 
+The tree shows only the components this methodology needs. A plugin can also bundle `settings.json` (default settings), `.lsp.json`, `monitors/`, and `bin/` (executables added to `PATH`); consult the plugin component reference for the full auto-discovered set.
+
 A minimal manifest:
 
 ```json
@@ -58,7 +60,7 @@ Three rules that prevent the usual silent failures:
 
 - **Component folders live at the plugin root, never inside `.claude-plugin/`.** Nesting them there makes the plugin load while its components silently vanish — the single most common structural mistake.
 - **Use `${CLAUDE_PLUGIN_ROOT}` for every intra-plugin path.** A hook that references `./scripts/git-guard.sh` by an absolute or home-relative path works on your machine and breaks on anyone else's. `${CLAUDE_PLUGIN_ROOT}/scripts/git-guard.sh` is portable.
-- **`.claude/rules/` is not a plugin component directory.** Rules are loaded from the project, not bundled the way commands/agents/skills/hooks are. Ship project conventions either as a skill, as instructions in the agents that need them, or as a documented `CLAUDE.md` block your installers paste in. Confirm current behaviour against the reference — this is exactly the kind of detail that shifts between releases.
+- **`.claude/rules/` is not a plugin component directory.** Rules load from the *project*, not from a plugin. Verified on Claude Code v2.1.181 (19/06/2026): with a test plugin enabled, its bundled `rules/` (and `.claude/rules/`) never fired while its commands did, and the plugin component reference omits `rules/` from the auto-discovered set. So ship project conventions — the Definition of Done especially — as a skill, as instructions in the agents that need them, or as a documented `CLAUDE.md` block your installers paste in. (Plugin mechanics still move; re-check on upgrade.)
 
 After install, a plugin's skills and commands are **namespaced** under the plugin name, e.g. `/my-methodology:retro`, which avoids collisions with a project's own.
 
