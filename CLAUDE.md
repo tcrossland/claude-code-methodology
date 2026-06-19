@@ -17,6 +17,7 @@ This repository is the methodology itself: reference docs, a CLAUDE.md template,
 - `docs/packaging-as-a-plugin.md` — plugin packaging companion.
 - `templates/CLAUDE.template.md` — the starter template artefact.
 - `CHANGELOG.md` — user-facing changes (Keep a Changelog, SemVer).
+- `docs/backlog.md` — ordered candidate work (§8 / Appendix F).
 
 ## Working agreement
 
