@@ -102,7 +102,7 @@ The temptation is to build a zoo. Resist it. The built-ins already cover most de
 
 | Subagent | Tools | Model | Why it earns its place |
 |---|---|---|---|
-| `code-reviewer` | `Read, Grep, Glob, Bash` (no Edit/Write) | `inherit` (or `sonnet`) | Read-only by design so it cannot "helpfully" rewrite while reviewing. With no PR reviewer, this is your second pair of eyes |
+| `code-reviewer` | `Read, Grep, Glob, Bash` (no Edit/Write) | `inherit` | Read-only by design so it cannot "helpfully" rewrite while reviewing. With no PR reviewer, this is your second pair of eyes; on model choice, see the note below |
 | `test-writer` | `Read, Edit, Write, Bash` | `sonnet` | Needs write access; scope it to test directories with a `PreToolUse` guard if you want belt-and-braces |
 | `db-reader` *(optional)* | `Bash` + `PreToolUse` validator | `haiku` | Only if you have a recurring need to run guarded read-only queries |
 
@@ -116,7 +116,7 @@ Only `name` and `description` are required. **The markdown body is the system pr
 - `effort` — `low`, `medium`, `high`, `xhigh`, `max` (availability depends on model).
 - `isolation: worktree` — runs the subagent in an isolated copy of the repo, auto-discarded if it makes no changes.
 
-**A recommendation that diverges from common advice:** default your custom agents to `model: inherit` and only pin a model where the task has a clear cost/capability shape (Haiku for mechanical search, Sonnet for analysis). Pinning Opus on a reviewer that runs constantly is a quiet money sink on a solo project.
+**A recommendation that diverges from common advice:** default your custom agents to `model: inherit` and only pin a model where the task has a clear cost/capability shape (Haiku for mechanical search, Sonnet for analysis). Pinning Opus on a reviewer that runs constantly is a quiet money sink on a solo project. For the *sole* reviewer there is a quality argument too, not just cost: `inherit` makes the review exactly as capable as whatever produced the diff, so your one gate can never silently fall *below* the generator. Its limits are that it cannot rise *above* a cheap generator, and a same-model reviewer shares the author's blind spots — so pin a stronger or different model (or set `CLAUDE_CODE_SUBAGENT_MODEL` for one run) only when you want the review to exceed or diverge from the generator, as on a high-risk diff written on a cheaper model.
 
 See Appendix A and B for drop-in definitions.
 
