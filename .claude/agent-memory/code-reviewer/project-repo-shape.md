@@ -8,7 +8,7 @@ metadata:
 This repo *is* the methodology it documents: mostly prose now, heading toward a Claude Code plugin (`docs/packaging-as-a-plugin.md`), so shell scripts + JSON manifests will arrive later.
 
 Key structure as of 06/2026:
-- `docs/methodology.md` — main reference. Sections §1–§10, Appendices A–N (14, all present and resolving). `/plan` J, `/accept` K, `/retro` L, `/release` M, `/wrap` N.
+- `docs/methodology.md` — main reference. Sections §1–§11 (§11 = Security), Appendices A–N (14, all present and resolving). `/plan` J, `/accept` K, `/retro` L, `/release` M, `/wrap` N.
 - `docs/packaging-as-a-plugin.md` — plugin companion. Does NOT discuss licensing.
 - A gitignored `docs/local/` may hold local-only working notes — don't treat their presence as a defect.
 - `.claude/` — live dogfooding: 5 commands (plan/accept/release/retro/wrap), `code-reviewer` agent, `definition-of-done.md` rule. No `test-writer` agent actually present (template references it as illustrative only).
