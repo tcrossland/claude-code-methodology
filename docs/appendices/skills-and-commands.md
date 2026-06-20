@@ -47,8 +47,10 @@ Work read-only until I approve a plan. Do not edit files.
 1. Explore first. Delegate breadth to the Explore agent, but restate any invariant it
    must respect in the prompt — Explore skips CLAUDE.md (§1). Read the active plan in
    docs/plans/ and the relevant CLAUDE.md invariants yourself before proposing anything.
-2. Size the task. If it is a one-line or single-file change with no invariant in play,
-   say so and recommend skipping the ceremony — do not manufacture stages for trivial work.
+2. Size the task. Plan first when the approach isn't obvious — a refactor, an architectural
+   choice, or anything touching an invariant. If it is a one-line or single-file change with no
+   invariant in play, say so and recommend skipping the ceremony — do not manufacture stages for
+   trivial work.
 3. Otherwise draft a plan: goal, ordered stages, per-stage steps with acceptance
    criteria, and an explicit out-of-scope list.
 4. Challenge it before presenting (§2): argue why this might not be worth building, and
