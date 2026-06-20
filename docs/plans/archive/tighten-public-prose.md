@@ -42,3 +42,5 @@ four narrative docs; pause after README to calibrate the voice before the long d
 - `.venv/bin/mkdocs build --strict` clean after the methodology edits.
 - `code-reviewer` on the full diff before merge (meaning-preservation + obeys the guide).
 - CHANGELOG: decide at /accept — lean to one `[Unreleased]` line; non-substantive, so not clear-cut.
+
+<!-- Completed and merged to main; archived under docs/plans/archive/ (§3). -->

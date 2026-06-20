@@ -6,7 +6,7 @@ item ships, move its user-facing outcome to `CHANGELOG.md [Unreleased]` and dele
 here (§8). British English; dates DD/MM/YYYY.
 
 ## Now (this plan)
-- Tighten the public prose to the house voice — see `docs/plans/tighten-public-prose.md`.
+- (none — no active plan)
 
 ## Next
 - (none)
