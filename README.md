@@ -15,11 +15,13 @@ enforce deterministically, not in clever prompting.
   example skill and the ritual commands; Appendices A–O), grouped by type. See its `README.md` index.
 - `docs/packaging-as-a-plugin.md` — how to package the methodology as a distributable
   Claude Code plugin, and why that's the natural endpoint.
+- `docs/worked-example.md` — one real task (adding a link-resolution check) traced through the
+  loop, end to end.
 - `templates/CLAUDE.template.md` — a lean starter `CLAUDE.md` with the conventions baked in.
 - `.claude/` — the methodology running live: the five ritual commands (`/plan`, `/accept`,
   `/retro`, `/release`, `/wrap`), the `code-reviewer` subagent, the Definition of Done
-  rule, a `PostToolUse` consistency hook (flags dangling §/appendix references and US
-  spellings on edit), and an `add-section` skill (the section/appendix cross-reference
+  rule, a `PostToolUse` consistency hook (flags dangling §/appendix references, broken
+  intra-repo links, and US spellings on edit), and an `add-section` skill (the section/appendix cross-reference
   ripple) — all tuned for this docs project (see *Dogfooding*).
 
 ## Using it

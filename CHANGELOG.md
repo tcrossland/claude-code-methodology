@@ -21,6 +21,8 @@ and the edits made while assembling this version were never separate releases.
   commands (`/plan`, `/accept`, `/retro`, `/release`, `/wrap`).
 - Plugin packaging companion (`docs/packaging-as-a-plugin.md`) — how to package the methodology
   as a distributable Claude Code plugin, and why that is the endpoint.
+- Worked end-to-end example (`docs/worked-example.md`) — one real task (adding the consistency
+  hook's link-resolution check) traced through the loop, Explore → … → `/wrap`.
 - Lean `CLAUDE.md` starter template (`templates/CLAUDE.template.md`).
 - The methodology running live in `.claude/`, dogfooded and tuned for this docs project: the five
   ritual commands, the read-only `code-reviewer` subagent, and a path-scoped Definition of Done
@@ -30,7 +32,8 @@ and the edits made while assembling this version were never separate releases.
   redistribute, including commercially; the `README.md` Licence section records the choice.
 - `PostToolUse` consistency hook (`.claude/hooks/docs-consistency.sh`, wired in
   `.claude/settings.json`): on each in-scope Markdown edit it flags dangling `§N`/appendix
-  cross-references and US spellings — the first live hook in the repo, dogfooding §6.
+  cross-references, broken intra-repo links, and US spellings — the first live hook in the repo,
+  dogfooding §6.
 - `add-section` skill (`.claude/skills/add-section/SKILL.md`): the repo's first live skill —
   encodes the append-only rule and the cross-reference/count ripple for adding a methodology
   section or appendix, the part of that defect class the consistency hook cannot catch.

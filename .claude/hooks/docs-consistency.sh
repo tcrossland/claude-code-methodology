@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 # docs-consistency.sh — PostToolUse hook (matcher: Edit|Write|MultiEdit).
 #
-# Catches, at edit time, two defect classes the code-reviewer keeps finding by
+# Catches, at edit time, three defect classes the code-reviewer keeps finding by
 # hand in the product docs:
 #   A) dangling cross-references — a §N or "Appendix X" that points at no real
 #      heading (sections validated against methodology.md, appendices against
-#      docs/appendices/*.md); and
+#      docs/appendices/*.md);
 #   B) US spellings — the house style is British (-ise); a curated, exact-word
-#      list flags the unambiguous American forms.
+#      list flags the unambiguous American forms; and
+#   C) broken intra-repo links — a [text](path) whose target file does not exist,
+#      resolved relative to the edited file (fenced code blocks are skipped).
 #
 # The edited file arrives as .tool_input.file_path in the JSON on stdin (the
 # field is identical for Edit, Write and MultiEdit). PostToolUse runs after the
@@ -24,7 +26,9 @@
 # methodology.md *and* a §11 reference elsewhere may flag the reference until
 # methodology.md's own edit lands; a re-edit clears it. (2) Check A matches the
 # singular "Appendix X"; plural "Appendices A & C" forms are skipped (safe
-# under-flagging, not a block).
+# under-flagging, not a block). (3) Check C resolves only inline [text](path)
+# links to relative paths; reference-style links, absolute "/..." paths, scheme
+# links (anything with a colon), and links inside fenced code blocks are not checked.
 #
 # POSIX sh only (no process substitution, no arrays), so a lost exec bit that
 # routes this through /bin/sh still parses and runs rather than failing closed.
@@ -107,11 +111,37 @@ done <<EOF
 $us_hits
 EOF
 
+# --- Check C: intra-repo markdown links resolve to existing files ---
+# Inline [text](path) / ![alt](path) whose target is a relative path must point at a
+# file or directory that exists, resolved against the edited file's directory. Fenced
+# code blocks are blanked first (line numbers preserved) so example links inside them
+# aren't flagged — this is what lets the docs narrate dangling-link samples safely.
+DIR=$(dirname "$FILE")
+stripped=$(awk '/^[[:space:]]*```/ { f = !f; print ""; next } { if (f) print ""; else print }' "$FILE")
+c_hits=$(printf '%s\n' "$stripped" | grep -noE '\]\([^)]*\)' 2>/dev/null || true)
+while IFS= read -r hit; do
+  [ -n "$hit" ] || continue
+  ln=${hit%%:*}
+  target=${hit#*:}
+  target=${target#"]("}          # strip leading ](
+  target=${target%")"}           # strip trailing )
+  target=${target%% *}           # drop any "title"
+  target=${target%%#*}           # drop #fragment
+  [ -n "$target" ] || continue
+  case "$target" in
+    /*|//*) continue ;;          # absolute / protocol-relative — out of scope
+    *:*)    continue ;;          # any scheme (http:, mailto:, ...); colons don't occur in repo paths
+  esac
+  [ -e "$DIR/$target" ] || findings="${findings}  broken link '${target}' — no such file (line ${ln})\n"
+done <<EOF
+$c_hits
+EOF
+
 if [ -n "$findings" ]; then
   {
     echo "docs-consistency: issues in ${REL}:"
     printf '%b' "$findings"
-    echo "Fix these, or proceed if a flag is a false positive. § refs must resolve to methodology.md sections and Appendix refs to docs/appendices/ headings; prose is British English."
+    echo "Fix these, or proceed if a flag is a false positive. § refs must resolve to methodology.md sections, Appendix refs to docs/appendices/ headings, and [text](path) links to existing files; prose is British English."
   } >&2
   exit 2
 fi

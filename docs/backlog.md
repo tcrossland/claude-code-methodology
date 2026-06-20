@@ -6,10 +6,7 @@ item ships, move its user-facing outcome to `CHANGELOG.md [Unreleased]` and dele
 here (§8). British English; dates DD/MM/YYYY.
 
 ## Now (this plan)
-- A worked end-to-end example — one real task traced through the loop (Explore → Plan → Execute →
-  Review → Accept → `/wrap`) with the actual files changing — feat · value M/H · effort M — why now:
-  the methodology justifies each piece in isolation but never shows the loop running; likely the
-  highest-leverage adoption aid, especially for the advisory angle.
+- (none — no active plan)
 
 ## Next
 - (none)

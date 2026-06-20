@@ -68,6 +68,8 @@ Explore → Plan → Challenge → (persist plan) → Execute → Review → Acc
 
 The loop above is the per-task rhythm. At a coarser grain — when a plan is finished — run a **retro** that turns recurring friction into configuration (§8). That is the one cadence worth keeping, and it is event-driven, not calendar-driven.
 
+*See [a worked example](worked-example.md) for this loop traced end to end through one real change.*
+
 ---
 
 ## 3. Plans, with status folded in
