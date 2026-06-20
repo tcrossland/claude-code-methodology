@@ -94,8 +94,10 @@ called done.
 
 The loop closes where the [backlog](backlog.md) opened it: a manual Definition-of-Done line is
 now a deterministic gate, and the friction that motivated it ("the reviewer keeps catching broken
-links by hand") became configuration rather than a recurring note — the retro move (§8). The
-session is named to match its plan and archived (`/wrap`, Appendix N), so the thread is
+links by hand") became configuration rather than a recurring note — the retro move (§8). Closing
+it out then surfaced a separate defect (the `/plan` ritual named the wrong place for the
+active-plan pointer), which became its own follow-up `fix` — the loop generating the next piece of
+work. The session is named to match its plan and archived (`/wrap`, Appendix N), so the thread is
 recoverable. That is the whole rhythm: explore the blast radius, plan and challenge, execute the
 small thing, verify it for real, accept against an explicit bar, and fold the lesson back into
 the tools.
