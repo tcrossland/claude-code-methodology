@@ -1,9 +1,8 @@
-# Claude Code Methodology
+# A File-First Operating Model for Claude Code
 
-A file-first operating model for driving Claude Code, written for experienced solo
-developers and small teams. It treats the harness as an engineered environment: the
-discipline lives in what you persist to files and what you enforce deterministically,
-not in clever prompting.
+Written for experienced solo developers and small teams, it treats the harness as an
+engineered environment: the discipline lives in what you persist to files and what you
+enforce deterministically, not in clever prompting.
 
 ## What's here
 

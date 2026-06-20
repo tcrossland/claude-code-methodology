@@ -1,4 +1,4 @@
-# Claude Code Methodology
+# A File-First Operating Model for Claude Code
 
 This repository is the methodology itself: reference docs, a CLAUDE.md template, and
 (eventually) a Claude Code plugin. It is a documentation project — no build, no runtime.

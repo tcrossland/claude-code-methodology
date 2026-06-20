@@ -1,6 +1,6 @@
 # Packaging the Methodology as a Plugin
 
-*Companion to "A Methodology for Driving Claude Code". Last updated 19/06/2026.*
+*Companion to "A File-First Operating Model for Claude Code". Last updated 19/06/2026.*
 
 ---
 
