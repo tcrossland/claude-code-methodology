@@ -12,10 +12,10 @@ guarding this file. Read it as a retrospective, not a tutorial.
 
 ## The task
 
-The [Definition of Done](../.claude/rules/definition-of-done.md) lists *"Links and paths
+The [Definition of Done](https://github.com/tcrossland/claude-code-methodology/blob/main/.claude/rules/definition-of-done.md) lists *"Links and paths
 resolve — intra-repo references point at files that exist."* The repository already enforces
 two of its consistency rules deterministically through a `PostToolUse` hook (§6),
-[`docs-consistency.sh`](../.claude/hooks/docs-consistency.sh): it flags dangling `§N`/Appendix
+[`docs-consistency.sh`](https://github.com/tcrossland/claude-code-methodology/blob/main/.claude/hooks/docs-consistency.sh): it flags dangling `§N`/Appendix
 cross-references (Check A) and US spellings (Check B). But link resolution was still a *manual*
 check — caught, if at all, by the human or the reviewer. The task: close that gap by adding
 **Check C**, so a link whose target file does not exist fails at edit time.
@@ -85,14 +85,14 @@ while the same link inside a fence, every real in-scope document, and all fail-o
 (missing file, out-of-repo path, non-Markdown, `.claude/`) exit cleanly. The check parses and
 runs identically under `bash` and `sh`.
 
-Then the [`code-reviewer`](../.claude/agents/code-reviewer.md) subagent (§4, Appendix A) read
+Then the [`code-reviewer`](https://github.com/tcrossland/claude-code-methodology/blob/main/.claude/agents/code-reviewer.md) subagent (§4, Appendix A) read
 the diff, and the work was checked against the [Definition of
-Done](../.claude/rules/definition-of-done.md) — codified as `/accept` (Appendix K) — before being
+Done](https://github.com/tcrossland/claude-code-methodology/blob/main/.claude/rules/definition-of-done.md) — codified as `/accept` (Appendix K) — before being
 called done.
 
 ## Wrap
 
-The loop closes where the [backlog](backlog.md) opened it: a manual Definition-of-Done line is
+The loop closes where the [backlog](https://github.com/tcrossland/claude-code-methodology/blob/main/docs/backlog.md) opened it: a manual Definition-of-Done line is
 now a deterministic gate, and the friction that motivated it ("the reviewer keeps catching broken
 links by hand") became configuration rather than a recurring note — the retro move (§8). Closing
 it out then surfaced a separate defect (the `/plan` ritual named the wrong place for the

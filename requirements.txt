@@ -1,0 +1,4 @@
+# Optional: builds the documentation site (see mkdocs.yml, ADR 0002).
+# Not required to read or edit the Markdown under docs/.
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt && .venv/bin/mkdocs serve
+mkdocs-material~=9.7

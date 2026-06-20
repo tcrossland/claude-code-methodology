@@ -2,3 +2,5 @@
 .claude/settings.local.json
 .DS_Store
 docs/local/
+site/
+.venv/

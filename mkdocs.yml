@@ -1,0 +1,69 @@
+site_name: A File-First Operating Model for Claude Code
+site_description: A file-first Claude Code operating model for solo developers and small teams.
+repo_url: https://github.com/tcrossland/claude-code-methodology
+repo_name: tcrossland/claude-code-methodology
+
+# The existing docs/ tree is the source — rendered, not restructured (ADR 0002).
+docs_dir: docs
+
+# Working artefacts that are not published reference.
+exclude_docs: |
+  backlog.md
+  plans/
+  design/
+  local/
+
+theme:
+  name: material
+  palette:
+    # Follows the system preference, with a header toggle to override.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+nav:
+  - Home: index.md
+  - Methodology: methodology.md
+  - Worked example: worked-example.md
+  - Appendices:
+      - Overview: appendices/README.md
+      - Subagents: appendices/subagents.md
+      - Hooks: appendices/hooks.md
+      - Document skeletons: appendices/skeletons.md
+      - Skills & commands: appendices/skills-and-commands.md
+  - Packaging as a plugin: packaging-as-a-plugin.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+# Broken intra-repo links are caught by `mkdocs build --strict` in CI (ADR 0002). The one
+# illustrative dangling link in docs/worked-example.md lives inside a code fence, so MkDocs
+# never parses it — no special-casing needed.
+validation:
+  links:
+    # Keep `warn`, not `error`: `--strict` promotes warnings to failures, so this still fails
+    # the CI build on a broken link, while a plain local `mkdocs serve/build` stays usable.
+    not_found: warn
