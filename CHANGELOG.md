@@ -39,6 +39,10 @@ and the edits made while assembling this version were never separate releases.
   file — so completion is no longer a hand-done checklist that can be half-applied.
 - Plan archiving convention (§3, Appendix D): completed plans move to `docs/plans/archive/` so
   `docs/plans/` shows only live work; they stay versioned as history.
+- §1 tool-surface treatment — extends the always-loaded-vs-on-demand scarcity thesis from files to
+  MCP tool definitions: the context cost of a server's schemas, Tool Search as the default
+  mitigation (`ENABLE_TOOL_SEARCH`, `alwaysLoad`), the disable-vs-defer point, and the least-privilege
+  tie to §11. Closes the tool-side gap §11 deliberately left open.
 - §11 "Security" — a consolidated security stance: secret hygiene, least privilege and Bash
   sandboxing, deterministic guards (and the inverse risk of hooks), untrusted-content/prompt-injection,
   and plugin/MCP trust. Ties together the least-privilege, hook and git-hygiene mechanisms in

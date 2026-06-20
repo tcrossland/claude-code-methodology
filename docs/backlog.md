@@ -9,10 +9,7 @@ here (§8). British English; dates DD/MM/YYYY.
 - (none — no active plan)
 
 ## Next
-- [ ] Add a tool-surface treatment — when an MCP server earns its place, the always-loaded context
-      cost of tool definitions (ties to the operating-principle scarcity thesis) with on-demand
-      loading as the mitigation, plus tool allowlisting — feat · value M · effort M — why now: the
-      context-cost thesis is left unfinished on the tool side (trust now lives in §11).
+- (none)
 
 ## Later / maybe
 - Christen the methodology — choose the name and command/plugin namespace — chore · value M · effort L
