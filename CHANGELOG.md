@@ -5,9 +5,14 @@ versions follow SemVer.
 
 ## [Unreleased]
 
-The first version of the methodology, not yet released. Everything here is initial content,
-so it is all *Added* — there is no prior released state for anything to have *Changed* from,
-and the edits made while assembling this version were never separate releases.
+_Nothing yet._
+
+## [0.1.0] — 20/06/2026
+
+The initial version of *A File-First Operating Model for Claude Code* (the methodology).
+Everything here is initial content, so it is all *Added* — there is no
+prior released state for anything to have *Changed* from, and the edits made while assembling
+this version were never separate releases.
 
 ### Added
 - Methodology reference (`docs/methodology.md`): the file-first operating model in full —
