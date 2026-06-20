@@ -9,10 +9,6 @@ here (§8). British English; dates DD/MM/YYYY.
 - (none — no active plan)
 
 ## Next
-- [ ] Dogfood §6 — add a consistency-check hook — debt · value H · effort M — why now: §6/Appendix C
-      cast hooks as the CI substitute, yet `.claude/settings.json` ships none; a `PostToolUse` hook on
-      `docs/*.md` that checks `§N`/appendix-letter refs resolve and flags US spellings would automate
-      the defect class reviews keep catching.
 - [ ] Consolidate a security stance — secret hygiene, destructive-command guards, `bypassPermissions`
       risk, plugin/MCP trust, and untrusted-content/prompt-injection awareness — feat · value M · effort M
       — why now: security is scattered across §5/§9/Appendices A & C with no single stance, and the

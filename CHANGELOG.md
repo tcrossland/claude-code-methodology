@@ -26,3 +26,8 @@ and the edits made while assembling this version were never separate releases.
 - "Dogfooding" section in `README.md` explaining that the repo is built with its own methodology.
 - Apache-2.0 licence (`LICENSE`, `NOTICE`): the methodology is free to use, modify, and
   redistribute, including commercially; the `README.md` Licence section records the choice.
+- `PostToolUse` consistency hook (`.claude/hooks/docs-consistency.sh`, wired in
+  `.claude/settings.json`): on each in-scope Markdown edit it flags dangling `§N`/appendix
+  cross-references and US spellings — the first live hook in the repo, dogfooding §6.
+- Plan archiving convention (§3, Appendix D): completed plans move to `docs/plans/archive/` so
+  `docs/plans/` shows only live work; they stay versioned as history.
