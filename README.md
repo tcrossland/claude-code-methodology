@@ -9,8 +9,9 @@ not in clever prompting.
 
 - `docs/methodology.md` — the full reference: context architecture, the work loop,
   plan/status persistence, subagents, the model/mode matrix, hooks, sessions/concurrency
-  and git hygiene, skills and commands, and solo product discipline (backlog, changelog,
-  Definition of Done, retro). Fourteen drop-in appendices (A–N).
+  and git hygiene, skills and commands, solo product discipline (backlog, changelog,
+  Definition of Done, retro), and a security stance (least privilege, prompt-injection and
+  plugin/MCP trust). Fourteen drop-in appendices (A–N).
 - `docs/packaging-as-a-plugin.md` — how to package the methodology as a distributable
   Claude Code plugin, and why that's the natural endpoint.
 - `templates/CLAUDE.template.md` — a lean starter `CLAUDE.md` with the conventions baked in.

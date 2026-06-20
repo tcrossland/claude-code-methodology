@@ -9,15 +9,10 @@ here (§8). British English; dates DD/MM/YYYY.
 - (none — no active plan)
 
 ## Next
-- [ ] Consolidate a security stance — secret hygiene, destructive-command guards, `bypassPermissions`
-      risk, plugin/MCP trust, and untrusted-content/prompt-injection awareness — feat · value M · effort M
-      — why now: security is scattered across §5/§9/Appendices A & C with no single stance, and the
-      prompt-injection/untrusted-content surface is a genuine omission (not just consolidation); a
-      distributed harness invites the "what's your security stance?" question.
 - [ ] Add a tool-surface treatment — when an MCP server earns its place, the always-loaded context
       cost of tool definitions (ties to the operating-principle scarcity thesis) with on-demand
       loading as the mitigation, plus tool allowlisting — feat · value M · effort M — why now: the
-      context-cost thesis is left unfinished on the tool side (trust lives in the security item).
+      context-cost thesis is left unfinished on the tool side (trust now lives in §11).
 
 ## Later / maybe
 - Christen the methodology — choose the name and command/plugin namespace — chore · value M · effort L

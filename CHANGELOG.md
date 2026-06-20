@@ -31,3 +31,8 @@ and the edits made while assembling this version were never separate releases.
   cross-references and US spellings — the first live hook in the repo, dogfooding §6.
 - Plan archiving convention (§3, Appendix D): completed plans move to `docs/plans/archive/` so
   `docs/plans/` shows only live work; they stay versioned as history.
+- §11 "Security" — a consolidated security stance: secret hygiene, least privilege and Bash
+  sandboxing, deterministic guards (and the inverse risk of hooks), untrusted-content/prompt-injection,
+  and plugin/MCP trust. Ties together the least-privilege, hook and git-hygiene mechanisms in
+  §4–§6 and §9 (Appendix C), and fills the prompt-injection and trust gaps the methodology
+  previously left unaddressed.
