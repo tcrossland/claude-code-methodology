@@ -12,8 +12,9 @@ Work read-only until I approve a plan. Do not edit files.
    documentation project, so changes must hold British English and keep the
    methodology internally consistent (§N cross-references and appendix letters A–O).
 2. Size the task. A single-section wording fix needs no plan — say so and recommend
-   skipping the ceremony. Plan first when the change spans multiple docs, renumbers or
-   re-letters anything, or touches an invariant in CLAUDE.md.
+   skipping the ceremony. Plan first when the approach isn't obvious: a refactor, an
+   architectural choice, anything that renumbers or re-letters content (it disturbs the
+   load-bearing §N/appendix refs), or anything touching an invariant in CLAUDE.md.
 3. Otherwise draft a plan: goal, ordered stages, per-stage steps with acceptance
    criteria, and an explicit out-of-scope list. Call out every cross-reference the
    change will disturb, since those must be updated together.
