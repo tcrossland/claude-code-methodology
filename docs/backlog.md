@@ -6,17 +6,10 @@ item ships, move its user-facing outcome to `CHANGELOG.md [Unreleased]` and dele
 here (§8). British English; dates DD/MM/YYYY.
 
 ## Now (this plan)
-- (none — no active plan)
+- Publish the methodology as a doc site (MkDocs Material) — see `docs/plans/publish-as-doc-site.md`.
 
 ## Next
-- Publish the methodology as a doc site / advisory front-door — evaluate mdBook (minimal, book-shaped) vs
-  MkDocs Material (search/polish; Starlight if JS-preferred; Pandoc → PDF if the deliverable is a
-  document, not a site) — feat · value M · effort M — why now: the external-publish/advisory gate is
-  resolved (repo is public, the content series is shipping); the governance essay and the methodology
-  need an *owned* home — the advisory front-door — on a neutral domain, rebrandable at the brand lock.
-  All render the existing Markdown (source stays Claude-readable), but each adds a build — so revisit the
-  "no build, no runtime" invariant and the DoD when taken on, and keep `methodology.md` a single page to
-  preserve the load-bearing cross-reference model.
+- (none)
 
 ## Later / maybe
 - House-voice guide — add a short style note (concision, sentence-length variety, sparing em-dashes,
