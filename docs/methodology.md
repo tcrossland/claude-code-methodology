@@ -27,12 +27,12 @@ The governing distinction is **always-loaded vs loaded-on-demand**. `CLAUDE.md` 
 |---|---|---|---|
 | Global rules | `~/.claude/CLAUDE.md` | Always, all projects | Personal conventions: language/spelling, commit style, "ask before X", default tooling |
 | Project rules + invariants | `./CLAUDE.md` (+ nested `./module/CLAUDE.md`) | Always | Hard constraints/invariants, build/test commands, a pointer to the active plan (one pointer; see §3), links into `docs/`. Nested files append; closest-to-cwd wins. Keep it lean |
-| Path-specific / conditional rules | `.claude/rules/*.md` | When the path or rule matches | Anything that applies to *some* of the tree, not all of it — including the Definition of Done |
-| Architecture (explanatory) | `docs/architecture.md` | On demand (linked; read when relevant) | Component breakdown, diagrams, data model, rationale — everything that is *not* a must-obey constraint |
+| Path-specific / conditional rules | `.claude/rules/*.md` | When the path or rule matches | Anything that applies to *some* of the tree, not all of it, including the Definition of Done |
+| Architecture (explanatory) | `docs/architecture.md` | On demand (linked; read when relevant) | Component breakdown, diagrams, data model, rationale: everything that is *not* a must-obey constraint |
 | Design decisions | `docs/design/*.md` (ADRs) | On demand | Architecturally significant, costly-to-reverse decisions and their reasoning |
 | Plans (status folded in) | `docs/plans/<name>.md` | On demand, stage-granular | Detailed, multi-stage plan; its status lives in the same file (see §3) |
-| Skills (procedural) | `.claude/skills/<name>/SKILL.md` | On demand (model- or `/`-invoked) | A reusable *procedure* — how to do a recurring task; the body loads only when invoked (see §10) |
-| Agent / persistent memory | `.claude/agent-memory/<agent>/` for `project` scope (or the `user`/`local` equivalent set by the subagent `memory:` field) | Recalled when relevant | Durable, hard-won learnings to carry across sessions — *not* facts the repo, git history, or `CLAUDE.md` already record |
+| Skills (procedural) | `.claude/skills/<name>/SKILL.md` | On demand (model- or `/`-invoked) | A reusable *procedure*: how to do a recurring task; the body loads only when invoked (see §10) |
+| Agent / persistent memory | `.claude/agent-memory/<agent>/` for `project` scope (or the `user`/`local` equivalent set by the subagent `memory:` field) | Recalled when relevant | Durable, hard-won learnings to carry across sessions, *not* facts the repo, git history, or `CLAUDE.md` already record |
 
 **Keep `CLAUDE.md` lean and stable.** The common failure is letting it accrete into a several-hundred-line dumping ground. Once it is long, two bad things happen: you pay context tax on every turn for rules that rarely fire, and the model deprioritises earlier system-level instructions in long sessions. A useful test: *if a rule would not apply to most turns, it does not belong in `CLAUDE.md`*. Move it to `.claude/rules/` or a doc under `docs/`. Official cost guidance agrees: move instructions from `CLAUDE.md` to skills, and offload processing to hooks.
 
@@ -59,14 +59,14 @@ Explore → Plan → Challenge → (persist plan) → Execute → Review → Acc
 |---|---|
 | Explore | Plan mode (read-only), or let Claude delegate to the read-only **Explore** agent (Haiku) |
 | Plan | Still in plan mode; research via the **Plan** subagent; plan presented through the exit-plan tool. Nothing is written until you approve. Codify as `/plan` (Appendix J) |
-| Challenge | Adversarial pass *before* you commit to the plan — cast Claude as a sceptic ("what's this missing? why might it not be worth doing?"). The cheap synthesis of the role tension you lose solo (see §8) |
+| Challenge | Adversarial pass *before* you commit to the plan: cast Claude as a sceptic ("what's this missing? why might it not be worth doing?"). The cheap synthesis of the role tension you lose solo (see §8) |
 | Persist | Write the approved plan to `docs/plans/<name>.md` *before* execution (see §3) |
 | Execute | Drop to an edit-capable mode on a feature branch or worktree |
 | Review | Your `code-reviewer` subagent (§4) |
-| Accept | Deliberately check the increment against the Definition of Done (see §8) before calling it done — the agent will not do this for you. Codify as `/accept` (Appendix K) |
+| Accept | Deliberately check the increment against the Definition of Done (see §8) before calling it done; the agent will not do this for you. Codify as `/accept` (Appendix K) |
 | Update status | Advance the current stage and record outcome/decisions in the same plan file |
 
-**Plan only when the task merits it.** A one-line fix does not need a plan-mode round trip. That is ceremony. Plan first when the task spans more than ~3 files, involves a refactor, or touches an invariant you cannot afford to get wrong. Below that threshold, plan mode is friction. You can set plan mode as the session default and step out of it deliberately, or use it ad hoc. The **Challenge** and **Accept** stages scale the same way: skip them for trivial work, apply them whenever scope or quality is in question.
+**Plan only when the task merits it.** A one-line fix does not need a plan-mode round trip. That is ceremony. Plan first when the approach isn't obvious: a refactor, an architectural choice, or anything touching an invariant you cannot afford to get wrong. Work that merely spans a few files but is mechanically clear does not need one, and below that bar plan mode is friction. You can set plan mode as the session default and step out of it deliberately, or use it ad hoc. The **Challenge** and **Accept** stages scale the same way: skip them for trivial work, apply them whenever scope or quality is in question.
 
 The loop above is the per-task rhythm. At a coarser grain — when a plan is finished — run a **retro** that turns recurring friction into configuration (§8). That is the one cadence worth keeping, and it is event-driven, not calendar-driven.
 
@@ -136,7 +136,7 @@ Current aliases: `opus`, `sonnet`, `haiku`, plus `fable`. You can also pass a fu
 |---|---|---|---|---|
 | Architecture / data-model design | `opus` | high–xhigh | `plan` | Yes |
 | Gnarly debugging, root-cause hunt | `opus` | high | `plan` → `default` | Usually |
-| Default feature work (the workhorse) | `sonnet` | medium | `default`, or `acceptEdits` on a branch | Only if >3 files / refactor |
+| Default feature work (the workhorse) | `sonnet` | medium | `default`, or `acceptEdits` on a branch | Only for a refactor or unclear approach |
 | Mechanical refactor in a known area | `sonnet` | medium | `acceptEdits` (branch/worktree) | No |
 | Codebase exploration / search | `haiku` (Explore) | low | `plan` (read-only) | n/a |
 | Test writing | `sonnet` | medium | `default` | No |
@@ -230,11 +230,11 @@ The five ritual commands map onto the loop (§2) and the session lifecycle (§9)
 
 | Command | Run when | Where in the rhythm | Drop-in |
 |---|---|---|---|
-| `/plan` | starting a non-trivial task | before execution — Explore → Plan → Challenge | Appendix J |
+| `/plan` | starting a non-trivial task | before execution: Explore → Plan → Challenge | Appendix J |
 | `/accept` | an increment looks finished | the Accept gate, before you call it done | Appendix K |
 | `/retro` | the same correction has recurred | at a plan or phase boundary | Appendix L |
 | `/wrap` | closing the session | session end | Appendix N |
-| `/release` | cutting a version | event-driven — off the per-task loop | Appendix M |
+| `/release` | cutting a version | event-driven, off the per-task loop | Appendix M |
 
 `/plan` → (execute) → `/accept` is the per-task spine, with `/retro` at the boundary and `/wrap` at session close; `/release` fires only when you version. Skip any of them for trivial work. The commands codify the discipline, they do not mandate it.
 

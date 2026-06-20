@@ -20,6 +20,9 @@ versions follow SemVer.
 - Tightened the prose across the public docs (`README.md`, `docs/methodology.md`, `docs/index.md`,
   `docs/worked-example.md`) to a house voice: fewer em-dashes and shorter sentences, with no
   change to the guidance.
+- Relaxed the plan-first trigger (§2 and the §5 matrix): plan when the approach is non-obvious (a
+  refactor, an architectural choice, or an invariant), not at a raw `>3 files` count, which fired
+  too eagerly for mechanically clear multi-file work.
 
 ## [0.1.0] — 20/06/2026
 
