@@ -1,7 +1,8 @@
 # Plan: Publish the methodology as a doc site (MkDocs Material)   (approved 20/06/2026)
 
-**Status:** all stages complete (20/06/2026) — `mkdocs build --strict` clean, code-reviewer
-Critical resolved. Pending: your review + commit/merge, then close-plan.
+**Status:** done (20/06/2026) — all four stages complete; the methodology renders as an optional
+MkDocs Material site (`mkdocs build --strict` clean), with gated GitHub Pages CI, ADR 0002, and
+the `no build` invariant reconciled. Reviewed clean and merged to main.
 <!-- Active plan; pointer set in docs/backlog.md ## Now (this plan). Branch: feat/doc-site. -->
 
 ## Context / Goal
@@ -59,3 +60,5 @@ restructuring; the "single page" worry no longer applies. Only 4 links point out
       absent. (Homebrew Python is PEP 668 externally-managed → used a venv.)
 - [x] `code-reviewer` subagent on the diff: one Critical (missing DoD item) — fixed; Minors
       addressed/noted. DoD walked.
+
+<!-- Completed and merged to main; archived under docs/plans/archive/ (§3). -->

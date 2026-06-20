@@ -6,7 +6,7 @@ item ships, move its user-facing outcome to `CHANGELOG.md [Unreleased]` and dele
 here (§8). British English; dates DD/MM/YYYY.
 
 ## Now (this plan)
-- Publish the methodology as a doc site (MkDocs Material) — see `docs/plans/publish-as-doc-site.md`.
+- (none — no active plan)
 
 ## Next
 - (none)
