@@ -34,9 +34,12 @@ a stage was dropped or deviated, record that in the plan rather than ticking it 
    ```
    `docs/backlog.md`'s `## Now (this plan)` is this repo's single pointer to the live plan (the
    §3 active-plan pointer); a cold-start session reads it to know nothing is live.
-4. **Archive the file.** Move it with `git mv` so history follows:
+4. **Archive the file.** Move it so history follows — `git mv` if the plan is already tracked,
+   plain `mv` if it was created this session and never committed (`git mv` errors on an untracked
+   file; the `mv` fallback stages the new path explicitly, since the repo forbids `git add -A`):
    ```bash
-   git mv docs/plans/<name>.md docs/plans/archive/<name>.md
+   git mv docs/plans/<name>.md docs/plans/archive/<name>.md \
+     || { mv docs/plans/<name>.md docs/plans/archive/<name>.md && git add docs/plans/archive/<name>.md; }
    ```
    Optionally add a trailing HTML comment recording archival and any friction worth a backlog
    item, matching the existing archived plans:

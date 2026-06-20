@@ -27,6 +27,8 @@ lint step; the bar is consistency and review, not a green suite.
       `docs/` or `.claude/`.
 - [ ] **CHANGELOG.md `[Unreleased]` updated** if the change is user-facing. For a methodology
       whose docs are the product, that is most guidance changes — internal churn aside.
+      (Pre-release: corrections to not-yet-released content stay under *Added*; no separate
+      *Changed* entry until there is a released baseline.)
 - [ ] **`code-reviewer` subagent run on the diff**, with no Critical findings outstanding.
 - [ ] **Active plan in `docs/plans/` advanced** if one is live (stage, ticked steps, deviations).
 
