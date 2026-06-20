@@ -9,10 +9,6 @@ here (§8). British English; dates DD/MM/YYYY.
 - (none — no active plan)
 
 ## Next
-- [ ] Scope the consistency hook off `docs/plans/` — debt · value M · effort L — why now: the hook
-      repeatedly flags plan files for *discussing* references (forward-refs to sections being added,
-      named test values, hypothetical appendices); plan/meta-docs legitimately name things that
-      don't resolve yet, so they belong out of scope like `docs/local/`.
 - [ ] Add a tool-surface treatment — when an MCP server earns its place, the always-loaded context
       cost of tool definitions (ties to the operating-principle scarcity thesis) with on-demand
       loading as the mitigation, plus tool allowlisting — feat · value M · effort M — why now: the

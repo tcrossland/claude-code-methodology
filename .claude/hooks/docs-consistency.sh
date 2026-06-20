@@ -14,9 +14,11 @@
 # edit, so it cannot block; exit 2 surfaces findings to Claude as actionable
 # feedback. Exit 0 when the file is clean or out of scope.
 #
-# Scope: docs/**/*.md (except docs/local/), README.md, CHANGELOG.md,
-# templates/*.md. Out: .claude/** (quoted config and tool names trip the
-# spelling list), LICENSE/NOTICE (intentionally American), non-Markdown.
+# Scope: docs/**/*.md (except docs/local/ and docs/plans/), README.md,
+# CHANGELOG.md, templates/*.md. Out: .claude/** (quoted config and tool names
+# trip the spelling list), docs/plans/ (plans and meta-docs legitimately discuss
+# references that don't resolve yet), LICENSE/NOTICE (intentionally American),
+# non-Markdown.
 #
 # Known limitations: (1) runs per-file — a single batch that adds "## 11." to
 # methodology.md *and* a §11 reference elsewhere may flag the reference until
@@ -53,6 +55,7 @@ case "$REL" in
 esac
 case "$REL" in
   docs/local/*) exit 0 ;;        # private working notes — never checked
+  docs/plans/*) exit 0 ;;        # plans/meta-docs legitimately discuss refs that don't resolve yet
 esac
 case "$REL" in
   docs/*|README.md|CHANGELOG.md|templates/*) ;;

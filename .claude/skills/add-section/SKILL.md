@@ -39,8 +39,9 @@ stale count ("fifteen") or range ("A–O"), so those are on you.
    `.claude/commands/plan.md`, and the reviewer's
    `.claude/agent-memory/code-reviewer/project-repo-shape.md`.
 3. **Add a `CHANGELOG.md` `[Unreleased]` line** if the change is user-facing (most are).
-4. **Run the consistency hook** on every edited *in-scope* Markdown file (`docs/`, `README.md`,
-   `CHANGELOG.md`, `templates/`; it no-ops on `.claude/`) — confirms no dangling reference:
+4. **Run the consistency hook** on every edited *in-scope* Markdown file (`docs/` except
+   `docs/local/` and `docs/plans/`, plus `README.md`, `CHANGELOG.md`, `templates/`; it no-ops on
+   `.claude/`) — confirms no dangling reference:
    ```bash
    printf '{"tool_input":{"file_path":"%s"}}' "$PWD/<file>" \
      | CLAUDE_PROJECT_DIR="$PWD" bash .claude/hooks/docs-consistency.sh; echo "exit=$?"
