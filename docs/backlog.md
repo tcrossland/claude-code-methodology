@@ -6,15 +6,15 @@ item ships, move its user-facing outcome to `CHANGELOG.md [Unreleased]` and dele
 here (§8). British English; dates DD/MM/YYYY.
 
 ## Now (this plan)
-- (none — no active plan)
-
-## Next
 - Tighten the public prose to the house voice — bounded copy-edit of `README.md` and the
   `methodology.md` narrative against `docs/style.md` (leave the appendix artefacts: they're
   reference/skeletons where voice barely matters and dashes sit in code/tables) — debt · value M ·
   effort M — why now: same credibility concern, but framed as "tighten to a tighter, more
   authoritative voice", not "disguise the AI"; acceptance = reviewed against the guide, British
   English and §N/appendix cross-references intact.
+
+## Next
+- (none)
 
 ## Later / maybe
 - Christen the methodology — choose the name and command/plugin namespace — chore · value M · effort L
