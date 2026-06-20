@@ -10,7 +10,7 @@ Drop-in document skeletons for the methodology — plan, Definition of Done, bac
 # Plan: <task name>   (approved DD/MM/YYYY)
 
 **Status:** in progress — Stage 2 of 3
-<!-- The active-plan pointer in CLAUDE.md (or docs/plans/README.md) names this file. -->
+<!-- The active-plan pointer (e.g. in CLAUDE.md, docs/plans/README.md, or your backlog) names this file. -->
 
 ## Goal
 <one or two sentences>

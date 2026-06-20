@@ -78,7 +78,7 @@ Three things keep this working at scale:
 
 1. **Write the plan before executing.** After plan-mode approval, Claude writes the file — goal, stages, per-stage steps with acceptance criteria, explicit out-of-scope notes.
 2. **Load by stage, not whole-file.** A large multi-stage plan reloaded in full on every turn is its own context tax. Structure it so the active stage can be read on its own, and point Claude at that stage during execution rather than the entire document.
-3. **Keep one pointer to the active plan.** A single line — in `CLAUDE.md` or a `docs/plans/README.md` — naming which plan is live. This is the one job the old separate status file did well: giving a cold-start session somewhere to land so it resumes the right plan rather than guessing.
+3. **Keep one pointer to the active plan.** A single line — e.g. in `CLAUDE.md`, a `docs/plans/README.md`, or a section of your backlog (this repo uses `docs/backlog.md`'s `## Now (this plan)`) — naming which plan is live. This is the one job the old separate status file did well: giving a cold-start session somewhere to land so it resumes the right plan rather than guessing.
 
 The payoff is that recovery from a compaction or a fresh session becomes "read the active plan, continue from the current stage" rather than reconstructing intent from a degraded transcript. For a solo workflow with no ticketing system, these plan files *are* your project memory; keep them in the repo so they version alongside the code they describe. When a plan is done, move it to `docs/plans/archive/` and clear the active-plan pointer: completed plans stay versioned as history without crowding the active set a cold-start session has to scan.
 
