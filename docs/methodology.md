@@ -80,7 +80,7 @@ Three things keep this working at scale:
 2. **Load by stage, not whole-file.** A large multi-stage plan reloaded in full on every turn is its own context tax. Structure it so the active stage can be read on its own, and point Claude at that stage during execution rather than the entire document.
 3. **Keep one pointer to the active plan.** A single line — in `CLAUDE.md` or a `docs/plans/README.md` — naming which plan is live. This is the one job the old separate status file did well: giving a cold-start session somewhere to land so it resumes the right plan rather than guessing.
 
-The payoff is that recovery from a compaction or a fresh session becomes "read the active plan, continue from the current stage" rather than reconstructing intent from a degraded transcript. For a solo workflow with no ticketing system, these plan files *are* your project memory; keep them in the repo so they version alongside the code they describe.
+The payoff is that recovery from a compaction or a fresh session becomes "read the active plan, continue from the current stage" rather than reconstructing intent from a degraded transcript. For a solo workflow with no ticketing system, these plan files *are* your project memory; keep them in the repo so they version alongside the code they describe. When a plan is done, move it to `docs/plans/archive/` and clear the active-plan pointer: completed plans stay versioned as history without crowding the active set a cold-start session has to scan.
 
 A complementary deterministic safeguard: a `PreCompact` hook can re-inject the active stage, and a `PostCompact` hook can confirm it was reloaded — so persistence does not depend on the model choosing to re-read the file.
 
@@ -420,6 +420,10 @@ Active-plan pointer — a single line kept current, e.g. in `CLAUDE.md`:
 ## Active plan
 docs/plans/<task-name>.md — Stage 2 of 3
 ```
+
+On completion, set `**Status:** done (DD/MM/YYYY)`, clear the active-plan pointer, and move the
+file to `docs/plans/archive/`. The plan stays versioned as project history; only its location
+changes, so `docs/plans/` shows just what is live.
 
 ## Appendix E — Definition of Done
 
