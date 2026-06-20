@@ -9,6 +9,7 @@ docs_dir: docs
 # Working artefacts that are not published reference.
 exclude_docs: |
   backlog.md
+  style.md
   plans/
   design/
   local/

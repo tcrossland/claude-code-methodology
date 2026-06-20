@@ -32,6 +32,7 @@ editing the Markdown; see `docs/design/0002-publish-as-doc-site.md`.)
   CHANGELOG categories at `/release`.
 - Internal/private material lives in gitignored `docs/local/`; never name or describe its
   contents in tracked files or commit messages — use neutral "local" terminology.
+- Prose in the public docs follows the house voice in `docs/style.md`.
 
 ## Working agreement
 
