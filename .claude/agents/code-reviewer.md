@@ -40,4 +40,7 @@ Report findings grouped by priority:
 - Suggestion (consider)
 
 For each, show the offending text and a concrete fix. Record recurring patterns in your
-memory so reviews improve over time.
+memory so reviews improve over time — but write memory to last: name a location by a stable
+anchor (heading or symbol), not a line number, and don't pin down an implementation's
+*current* shape that a later edit will strand. If a note is unavoidably tied to today's state,
+date it so the next review re-verifies rather than trusting it.
