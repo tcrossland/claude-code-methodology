@@ -5,7 +5,7 @@
 ---
 
 The methodology justifies each piece in isolation but never shows the loop turning. This is
-one real task — adding a third check to the repository's consistency hook — traced through
+one real task (adding a third check to the repository's consistency hook), traced through
 the core loop (§2) with the actual artefacts that changed. It is deliberately
 self-referential: the change described here is the change that produced the very check now
 guarding this file. Read it as a retrospective, not a tutorial.
@@ -17,7 +17,7 @@ resolve — intra-repo references point at files that exist."* The repository al
 two of its consistency rules deterministically through a `PostToolUse` hook (§6),
 [`docs-consistency.sh`](https://github.com/tcrossland/claude-code-methodology/blob/main/.claude/hooks/docs-consistency.sh): it flags dangling `§N`/Appendix
 cross-references (Check A) and US spellings (Check B). But link resolution was still a *manual*
-check — caught, if at all, by the human or the reviewer. The task: close that gap by adding
+check, caught, if at all, by the human or the reviewer. The task: close that gap by adding
 **Check C**, so a link whose target file does not exist fails at edit time.
 
 ## Explore
@@ -28,7 +28,7 @@ links" but "what does adding a check disturb?" Two findings changed the plan:
 - The hook's check count lives **only in its own header comment** — no methodology section
   states "two checks", so adding a third ripples almost nowhere in the prose.
 - Appendix C ([`appendices/hooks.md`](appendices/hooks.md)) holds *generic example* hooks, not
-  the live script — the two are decoupled by design. So the change touches **no appendix and no
+  the live script. The two are decoupled by design. So the change touches **no appendix and no
   `A–O` count claim**. That single fact shrank the blast radius from "fifteen cross-referenced
   files" to "the hook, the changelog line, and one index entry".
 
@@ -43,7 +43,7 @@ was multi-stage (§3). Before committing to it, the **Challenge** pass (§2) ear
 - *Is reusing an off-the-shelf checker the right call?* Mature, permissively-licensed tools
   exist (lychee, markdown-link-check). They were **rejected**: each needs a runtime (a Rust
   binary or an npm install), which reintroduces exactly the toolchain the repository's "no
-  build, no runtime" invariant forbids — for a job that is ~20 lines of shell against the local
+  build, no runtime" invariant forbids, for a job that is ~20 lines of shell against the local
   filesystem. Build-vs-reuse went to *build*, because the dependency cost exceeded what it saved.
 - *Will the new check flag this very document?* A worked example about broken links must be able
   to *show* a broken link. That hole in the acceptance criteria drove the one non-obvious design
@@ -52,7 +52,7 @@ was multi-stage (§3). Before committing to it, the **Challenge** pass (§2) ear
 ## Execute
 
 Check C extracts inline links, skips anything that is not a relative path, resolves the target
-against the edited file's directory, and flags a miss — mirroring the existing checks' fail-open,
+against the edited file's directory, and flags a miss, mirroring the existing checks' fail-open,
 POSIX-sh discipline. The design point that fell out of the Challenge pass: **fenced code blocks
 are blanked before extraction**, so an illustrative dangling link inside a fence is ignored. That
 is what lets this paragraph show one without the hook flagging the page:
@@ -72,7 +72,7 @@ c_hits=$(printf '%s\n' "$stripped" | grep -noE '\]\([^)]*\)' 2>/dev/null || true
 
 ## Review and Accept
 
-The change was verified by *running it*, not by reasoning about it (§8) — the acceptance gate
+The change was verified by *running it*, not by reasoning about it (§8), the acceptance gate
 the agent will not apply for you. Synthetic JSON payloads exercised every path: a broken link
 gives the expected feedback,
 
@@ -94,7 +94,7 @@ called done.
 
 The loop closes where the [backlog](https://github.com/tcrossland/claude-code-methodology/blob/main/docs/backlog.md) opened it: a manual Definition-of-Done line is
 now a deterministic gate, and the friction that motivated it ("the reviewer keeps catching broken
-links by hand") became configuration rather than a recurring note — the retro move (§8). Closing
+links by hand") became configuration rather than a recurring note, the retro move (§8). Closing
 it out then surfaced a separate defect (the `/plan` ritual named the wrong place for the
 active-plan pointer), which became its own follow-up `fix` — the loop generating the next piece of
 work. The session is named to match its plan and archived (`/wrap`, Appendix N), so the thread is

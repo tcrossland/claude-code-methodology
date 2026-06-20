@@ -20,8 +20,8 @@ teams.
 
 1. Read [the methodology](methodology.md).
 2. Drop the starter `CLAUDE.md` template into a project and fill it in.
-3. Adopt the loop, the file layout, and the appendix artefacts as they earn their place — not
+3. Adopt the loop, the file layout, and the appendix artefacts as they earn their place, not
    all at once.
 
 The source is plain Markdown, readable on its own; this site renders it. It is licensed
-Apache-2.0 — free to use, modify, and redistribute, including commercially.
+Apache-2.0: free to use, modify, and redistribute, including commercially.

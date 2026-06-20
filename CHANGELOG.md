@@ -16,6 +16,11 @@ versions follow SemVer.
   Material over mdBook/Starlight/Pandoc) and reconciles the `no build, no runtime` invariant —
   the site is an *optional* publish build, never a prerequisite for reading or editing the source.
 
+### Changed
+- Tightened the prose across the public docs (`README.md`, `docs/methodology.md`, `docs/index.md`,
+  `docs/worked-example.md`) to a house voice: fewer em-dashes and shorter sentences, with no
+  change to the guidance.
+
 ## [0.1.0] — 20/06/2026
 
 The initial version of *A File-First Operating Model for Claude Code* (the methodology).
