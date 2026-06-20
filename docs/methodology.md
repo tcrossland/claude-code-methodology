@@ -6,6 +6,8 @@
 
 ## Operating principle
 
+This is an **operating model** — a file-first way of working you keep running, not a procedure you run once; "the methodology" is the shorthand used for it throughout.
+
 You are not prompting a chatbot; you are engineering a repeatable environment. The model's **attention** and its **context window** are the scarce resources. A good methodology is therefore mostly a set of decisions about two things:
 
 1. **What you persist to files** — so intent survives compaction, session restarts, and your own forgetfulness.
