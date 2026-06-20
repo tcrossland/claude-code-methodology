@@ -22,14 +22,14 @@ enforce deterministically, not in clever prompting.
   `/retro`, `/release`, `/wrap`), the `code-reviewer` subagent, the Definition of Done
   rule, a `PostToolUse` consistency hook (flags dangling §/appendix references, broken
   intra-repo links, and US spellings on edit), and an `add-section` skill (the section/appendix cross-reference
-  ripple) — all tuned for this docs project (see *Dogfooding*).
+  ripple), all tuned for this docs project (see *Dogfooding*).
 
 ## Using it
 
 1. Read `docs/methodology.md`.
 2. Drop `templates/CLAUDE.template.md` into a project as `CLAUDE.md` and fill it in.
 3. Adopt the loop, the file layout (`docs/plans/`, `docs/design/`, `CHANGELOG.md`) and the
-   appendix artefacts (subagents, hooks, skills, commands) as they earn their place — not
+   appendix artefacts (subagents, hooks, skills, commands) as they earn their place, not
    all at once.
 
 ## Reading it as a site
@@ -42,24 +42,23 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/mkdocs serve   # http://127.0.0.1:8000
 ```
 
-The site build is optional — never a prerequisite for reading or editing the Markdown (see
+The site build is optional, never a prerequisite for reading or editing the Markdown (see
 `docs/design/0002-publish-as-doc-site.md`). It is not yet deployed: publishing to a neutral
-domain waits until the public name is locked (CI carries the build; the deploy step is gated to a
-manual run).
+domain waits until the public name is locked. CI carries the build; the deploy step is gated to a
+manual run.
 
 ## Dogfooding
 
-This repository eats its own dogfood: it is built using the methodology it documents. The
-lean root `CLAUDE.md`, the docs under `docs/`, the curated root `CHANGELOG.md`, and the
-contents of `.claude/` — the five ritual commands, the `code-reviewer` subagent, the
-Definition of Done rule, the consistency hook, and the `add-section` skill — are not
-illustrations; they are how the work here actually gets done. They are tuned to a
-documentation project (the source has no build or test step — the MkDocs site is an optional
-publish build; verification is British English plus the
-internal-consistency invariant — § cross-references
-and appendix letters A–O — enforced by the `PostToolUse` consistency hook and review rather
-than a suite), which doubles as a worked example of adapting the appendix drop-ins to a real
-repo rather than pasting them verbatim.
+This repository is built using the methodology it documents. The lean root `CLAUDE.md`, the
+docs under `docs/`, the curated root `CHANGELOG.md`, and the contents of `.claude/` (the five
+ritual commands, the `code-reviewer` subagent, the Definition of Done rule, the consistency
+hook, and the `add-section` skill) are not illustrations; they are how the work here gets done.
+
+They are tuned to a documentation project. The source has no build or test step, and the MkDocs
+site is an optional publish build. Verification rests on British English and the
+internal-consistency invariant (§ cross-references and appendix letters A–O), enforced by the
+`PostToolUse` consistency hook and review rather than a test suite. That tuning doubles as a
+worked example: it adapts the appendix drop-ins to a real repo rather than pasting them verbatim.
 
 ## Status
 
@@ -68,6 +67,6 @@ doc) with the document as its rationale.
 
 ## Licence
 
-[Apache-2.0](LICENSE). Permissive — use, modify, and redistribute freely, including
+[Apache-2.0](LICENSE). Permissive: use, modify, and redistribute freely, including
 commercially; the methodology spreads by adoption. The licence grants no rights to the
 project's name or marks (`LICENSE` §6) and carries an explicit patent grant (§3).
