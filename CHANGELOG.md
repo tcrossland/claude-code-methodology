@@ -5,7 +5,16 @@ versions follow SemVer.
 
 ## [Unreleased]
 
-_Nothing yet._
+### Added
+- Documentation site (MkDocs Material): `mkdocs.yml`, a lean front-door landing (`docs/index.md`),
+  and `requirements.txt` render the existing `docs/` Markdown unchanged as a searchable site —
+  buildable locally (`mkdocs serve`) but not yet deployed (publishing waits for the brand lock).
+  Includes a light/dark palette toggle that follows the reader's system preference.
+- `.github/workflows/docs.yml` — first CI in the repo: builds the site with `mkdocs build
+  --strict` on push and PR; the GitHub Pages deploy step is gated to a manual run.
+- ADR 0002 (`docs/design/0002-publish-as-doc-site.md`) records the toolchain choice (MkDocs
+  Material over mdBook/Starlight/Pandoc) and reconciles the `no build, no runtime` invariant —
+  the site is an *optional* publish build, never a prerequisite for reading or editing the source.
 
 ## [0.1.0] — 20/06/2026
 

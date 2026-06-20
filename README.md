@@ -32,6 +32,21 @@ enforce deterministically, not in clever prompting.
    appendix artefacts (subagents, hooks, skills, commands) as they earn their place — not
    all at once.
 
+## Reading it as a site
+
+The docs render as a [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) site — the
+same Markdown, with search and navigation. To build it locally:
+
+```sh
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+.venv/bin/mkdocs serve   # http://127.0.0.1:8000
+```
+
+The site build is optional — never a prerequisite for reading or editing the Markdown (see
+`docs/design/0002-publish-as-doc-site.md`). It is not yet deployed: publishing to a neutral
+domain waits until the public name is locked (CI carries the build; the deploy step is gated to a
+manual run).
+
 ## Dogfooding
 
 This repository eats its own dogfood: it is built using the methodology it documents. The
@@ -39,7 +54,8 @@ lean root `CLAUDE.md`, the docs under `docs/`, the curated root `CHANGELOG.md`, 
 contents of `.claude/` — the five ritual commands, the `code-reviewer` subagent, the
 Definition of Done rule, the consistency hook, and the `add-section` skill — are not
 illustrations; they are how the work here actually gets done. They are tuned to a
-documentation project (no build or test step; verification is British English plus the
+documentation project (the source has no build or test step — the MkDocs site is an optional
+publish build; verification is British English plus the
 internal-consistency invariant — § cross-references
 and appendix letters A–O — enforced by the `PostToolUse` consistency hook and review rather
 than a suite), which doubles as a worked example of adapting the appendix drop-ins to a real

@@ -27,12 +27,18 @@ For Markdown / prose (`*.md`) — the bulk of this repo:
   restate, what another doc already says. The methodology must stay internally coherent.
 - **Changelog discipline** — a user-facing change has a matching `CHANGELOG.md [Unreleased]`
   line; the changelog is curated, not a commit dump.
+- **Doc-site build** — when the diff touches `mkdocs.yml`, `requirements.txt`, or a published
+  doc (under `docs/`, excluding `backlog.md`, `plans/`, `design/`, `local/`), confirm
+  `mkdocs build --strict` is clean. You have Bash and the build is read-only, so run it rather
+  than eyeballing links.
 
-For shell scripts, JSON, and any executable config (when present):
+For shell scripts, JSON/YAML, and any executable config — CI workflows, hooks, manifests (when present):
 - No exposed secrets, keys, or personal endpoints/paths.
 - Hook and guard scripts are correct and safe — no unquoted expansions, no injection via
   tool input, intra-plugin paths use `${CLAUDE_PLUGIN_ROOT}` and hook paths `$CLAUDE_PROJECT_DIR`.
 - Manifests are valid and match the documented plugin structure.
+- CI workflows (`.github/workflows/*.yml`) have least-privilege `permissions`, and any
+  publish/deploy step is gated as the docs claim (e.g. the Pages deploy is `workflow_dispatch`-only).
 
 Report findings grouped by priority:
 - Critical (must fix)

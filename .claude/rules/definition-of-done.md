@@ -11,8 +11,9 @@ paths:
      so the bar is consistency and review rather than a green suite. Deliberate divergence. -->
 
 A change is not done until ALL of these hold. Do not report a task complete until you have
-checked each one and can say which evidence confirms it. This repo has no build, test, or
-lint step; the bar is consistency and review, not a green suite.
+checked each one and can say which evidence confirms it. This repo has no test or lint step and
+no build for the source; the bar is consistency and review, not a green suite. (The MkDocs site
+is an optional publish build — see the site-build item below and ADR 0002.)
 
 - [ ] **British English throughout** — spelling, `DD/MM/YYYY` dates, `£`/`€` before figures.
 - [ ] **Internal consistency** — every `§N` cross-reference and appendix letter (A–O) touched
@@ -29,6 +30,10 @@ lint step; the bar is consistency and review, not a green suite.
       whose docs are the product, that is most guidance changes — internal churn aside.
       (Pre-release: corrections to not-yet-released content stay under *Added*; no separate
       *Changed* entry until there is a released baseline.)
+- [ ] **Doc-site build (when touched)** — if the change edits `mkdocs.yml`, `requirements.txt`,
+      or a published doc (anything under `docs/` except `backlog.md`, `plans/`, `design/`,
+      `local/`), `mkdocs build --strict` completes cleanly. (The one deliberately-broken link in
+      `docs/worked-example.md` lives inside a code fence, so MkDocs does not parse it.) See ADR 0002.
 - [ ] **`code-reviewer` subagent run on the diff**, with no Critical findings outstanding.
 - [ ] **Active plan in `docs/plans/` advanced** if one is live (stage, ticked steps, deviations).
 

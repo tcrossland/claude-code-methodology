@@ -1,7 +1,9 @@
 # A File-First Operating Model for Claude Code
 
 This repository is the methodology itself: reference docs, a CLAUDE.md template, and
-(eventually) a Claude Code plugin. It is a documentation project — no build, no runtime.
+(eventually) a Claude Code plugin. It is a documentation project: the source has no build or
+runtime. (The MkDocs site is an *optional* publish build — never a prerequisite for reading or
+editing the Markdown; see `docs/design/0002-publish-as-doc-site.md`.)
 
 ## Invariants
 
@@ -19,6 +21,7 @@ This repository is the methodology itself: reference docs, a CLAUDE.md template,
 - `templates/CLAUDE.template.md` — the starter template artefact.
 - `CHANGELOG.md` — user-facing changes (Keep a Changelog, SemVer).
 - `docs/backlog.md` — ordered candidate work (§8 / Appendix F).
+- `mkdocs.yml` + `requirements.txt` — optional doc-site build (ADR 0002); `docs/` is the source.
 
 ## Conventions
 
