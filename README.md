@@ -19,8 +19,9 @@ not in clever prompting.
 - `templates/CLAUDE.template.md` — a lean starter `CLAUDE.md` with the conventions baked in.
 - `.claude/` — the methodology running live: the five ritual commands (`/plan`, `/accept`,
   `/retro`, `/release`, `/wrap`), the `code-reviewer` subagent, the Definition of Done
-  rule, and a `PostToolUse` consistency hook (flags dangling §/appendix references and US
-  spellings on edit) — all tuned for this docs project (see *Dogfooding*).
+  rule, a `PostToolUse` consistency hook (flags dangling §/appendix references and US
+  spellings on edit), and an `add-section` skill (the section/appendix cross-reference
+  ripple) — all tuned for this docs project (see *Dogfooding*).
 
 ## Using it
 
@@ -35,9 +36,10 @@ not in clever prompting.
 This repository eats its own dogfood: it is built using the methodology it documents. The
 lean root `CLAUDE.md`, the docs under `docs/`, the curated root `CHANGELOG.md`, and the
 contents of `.claude/` — the five ritual commands, the `code-reviewer` subagent, the
-Definition of Done rule, and the consistency hook — are not illustrations; they are how the
-work here actually gets done. They are tuned to a documentation project (no build or test
-step; verification is British English plus the internal-consistency invariant — § cross-references
+Definition of Done rule, the consistency hook, and the `add-section` skill — are not
+illustrations; they are how the work here actually gets done. They are tuned to a
+documentation project (no build or test step; verification is British English plus the
+internal-consistency invariant — § cross-references
 and appendix letters A–O — enforced by the `PostToolUse` consistency hook and review rather
 than a suite), which doubles as a worked example of adapting the appendix drop-ins to a real
 repo rather than pasting them verbatim.

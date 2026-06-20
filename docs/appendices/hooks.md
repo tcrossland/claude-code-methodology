@@ -1,6 +1,6 @@
 # Methodology appendices — hooks
 
-Drop-in project hooks for the methodology. Companion to `../methodology.md`; the full A–O index is in this directory's `README.md`.
+Drop-in project hooks for the methodology. Companion to `../methodology.md`; the full index is in this directory's `README.md`.
 
 ## Appendix C — project hooks
 

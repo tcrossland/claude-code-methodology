@@ -31,6 +31,9 @@ and the edits made while assembling this version were never separate releases.
 - `PostToolUse` consistency hook (`.claude/hooks/docs-consistency.sh`, wired in
   `.claude/settings.json`): on each in-scope Markdown edit it flags dangling `§N`/appendix
   cross-references and US spellings — the first live hook in the repo, dogfooding §6.
+- `add-section` skill (`.claude/skills/add-section/SKILL.md`): the repo's first live skill —
+  encodes the append-only rule and the cross-reference/count ripple for adding a methodology
+  section or appendix, the part of that defect class the consistency hook cannot catch.
 - Plan archiving convention (§3, Appendix D): completed plans move to `docs/plans/archive/` so
   `docs/plans/` shows only live work; they stay versioned as history.
 - §11 "Security" — a consolidated security stance: secret hygiene, least privilege and Bash

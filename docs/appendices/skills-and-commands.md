@@ -1,6 +1,6 @@
 # Methodology appendices — skills and commands
 
-Drop-in skill and command definitions for the methodology — the example skill and the five ritual commands. Companion to `../methodology.md`; the full A–O index is in this directory's `README.md`.
+Drop-in skill and command definitions for the methodology — the example skill and the five ritual commands. Companion to `../methodology.md`; the full index is in this directory's `README.md`.
 
 ## Appendix I — example skill
 

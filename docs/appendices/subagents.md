@@ -1,6 +1,6 @@
 # Methodology appendices — subagents
 
-Drop-in subagent definitions for the methodology. Companion to `../methodology.md`; the full A–O index is in this directory's `README.md`.
+Drop-in subagent definitions for the methodology. Companion to `../methodology.md`; the full index is in this directory's `README.md`.
 
 ## Appendix A — `code-reviewer` subagent
 

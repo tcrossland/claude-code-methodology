@@ -1,6 +1,6 @@
 # Methodology appendices — document skeletons
 
-Drop-in document skeletons for the methodology — plan, Definition of Done, backlog, ADR, changelog, and the security checklist. Companion to `../methodology.md`; the full A–O index is in this directory's `README.md`.
+Drop-in document skeletons for the methodology — plan, Definition of Done, backlog, ADR, changelog, and the security checklist. Companion to `../methodology.md`; the full index is in this directory's `README.md`.
 
 ## Appendix D — plan file with folded status
 
