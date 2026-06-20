@@ -1,3 +1,5 @@
 - [Repo shape and review focus](project-repo-shape.md) — what this repo is and the load-bearing invariants to check every review
 - [Recurring defect patterns](feedback-recurring-defects.md) — the prose/consistency defect classes that actually show up here
 - [Plugin-cannot-bundle-rules claim](project-plugin-rules-claim.md) — the verified empirical claim and how its wording must stay honest
+- [Reviewing the bash hooks](feedback-hook-script-review.md) — portability, exec-bit, scope-gate and fail-open traps to check in `.claude/hooks/`
+- [Plan archiving convention](project-plan-archiving.md) — completed plans move to docs/plans/archive/; where it's documented and why generic docs/plans/ refs stay correct
