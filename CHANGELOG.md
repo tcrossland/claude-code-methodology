@@ -5,6 +5,10 @@ versions follow SemVer.
 
 ## [Unreleased]
 
+_Nothing yet._
+
+## [0.2.0] — 20/06/2026
+
 ### Added
 - Documentation site (MkDocs Material): `mkdocs.yml`, a lean front-door landing (`docs/index.md`),
   and `requirements.txt` render the existing `docs/` Markdown unchanged as a searchable site —
