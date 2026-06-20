@@ -55,7 +55,7 @@ Work read-only until I approve a plan. Do not edit files.
    find the holes in the acceptance criteria. Fold what survives back into the plan.
 5. Present the plan through the exit-plan tool. On approval, if the work is multi-stage
    or will not finish this session, write it to docs/plans/<name>.md (Appendix D) and
-   point the active-plan line (CLAUDE.md) at it.
+   update the active-plan pointer (§3) to name it.
 ```
 
 ## Appendix K — `/accept` command

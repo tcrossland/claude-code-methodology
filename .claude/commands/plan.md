@@ -21,4 +21,4 @@ Work read-only until I approve a plan. Do not edit files.
    find the holes in the acceptance criteria. Fold what survives back into the plan.
 5. Present the plan through the exit-plan tool. On approval, if the work is multi-stage
    or will not finish this session, write it to `docs/plans/<name>.md` (methodology
-   Appendix D) and point the active-plan line in CLAUDE.md at it.
+   Appendix D) and update the active-plan pointer — `docs/backlog.md`'s `## Now (this plan)` — to name it.
