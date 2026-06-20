@@ -14,9 +14,11 @@ and the edits made while assembling this version were never separate releases.
   context architecture (including memory hygiene), the core loop, plan/status persistence, the
   subagent roster, the model/mode matrix, hooks as a CI substitute, sessions/concurrency and git
   hygiene, skills and commands (with the command/skill-vs-subagent distinction and a table
-  sequencing the rituals), and solo product discipline. Fourteen drop-in appendices (A–N),
-  including the five ritual commands (`/plan`, `/accept`, `/retro`, `/release`, `/wrap`) as a
-  contiguous block.
+  sequencing the rituals), solo product discipline, and a security stance (§11).
+- Drop-in appendices (`docs/appendices/`): fifteen artefacts (A–O), grouped by type — the
+  `code-reviewer`/`test-writer` subagents, project hooks, document skeletons (plan, Definition of
+  Done, backlog, ADR, changelog, security checklist), the example skill and the five ritual
+  commands (`/plan`, `/accept`, `/retro`, `/release`, `/wrap`).
 - Plugin packaging companion (`docs/packaging-as-a-plugin.md`) — how to package the methodology
   as a distributable Claude Code plugin, and why that is the endpoint.
 - Lean `CLAUDE.md` starter template (`templates/CLAUDE.template.md`).

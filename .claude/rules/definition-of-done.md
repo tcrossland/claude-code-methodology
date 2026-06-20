@@ -15,7 +15,7 @@ checked each one and can say which evidence confirms it. This repo has no build,
 lint step; the bar is consistency and review, not a green suite.
 
 - [ ] **British English throughout** — spelling, `DD/MM/YYYY` dates, `£`/`€` before figures.
-- [ ] **Internal consistency** — every `§N` cross-reference and appendix letter (A–N) touched
+- [ ] **Internal consistency** — every `§N` cross-reference and appendix letter (A–O) touched
       by the change resolves to the right target; nothing dangling or mis-lettered. When a
       number or letter moved, every reference to it moved too.
 - [ ] **No contradiction or duplication** — new guidance does not conflict with, or silently

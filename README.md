@@ -11,7 +11,9 @@ not in clever prompting.
   plan/status persistence, subagents, the model/mode matrix, hooks, sessions/concurrency
   and git hygiene, skills and commands, solo product discipline (backlog, changelog,
   Definition of Done, retro), and a security stance (least privilege, prompt-injection and
-  plugin/MCP trust). Fourteen drop-in appendices (A–N).
+  plugin/MCP trust).
+- `docs/appendices/` — the fifteen drop-in artefacts (subagents, hooks, document skeletons, the
+  example skill and the ritual commands; Appendices A–O), grouped by type. See its `README.md` index.
 - `docs/packaging-as-a-plugin.md` — how to package the methodology as a distributable
   Claude Code plugin, and why that's the natural endpoint.
 - `templates/CLAUDE.template.md` — a lean starter `CLAUDE.md` with the conventions baked in.
@@ -36,7 +38,7 @@ contents of `.claude/` — the five ritual commands, the `code-reviewer` subagen
 Definition of Done rule, and the consistency hook — are not illustrations; they are how the
 work here actually gets done. They are tuned to a documentation project (no build or test
 step; verification is British English plus the internal-consistency invariant — § cross-references
-and appendix letters A–N — enforced by the `PostToolUse` consistency hook and review rather
+and appendix letters A–O — enforced by the `PostToolUse` consistency hook and review rather
 than a suite), which doubles as a worked example of adapting the appendix drop-ins to a real
 repo rather than pasting them verbatim.
 

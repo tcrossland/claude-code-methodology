@@ -18,7 +18,7 @@ When invoked:
 For Markdown / prose (`*.md`) — the bulk of this repo:
 - **British English** — spelling, `DD/MM/YYYY` dates, `£`/`€` before figures.
 - **Internal consistency (load-bearing)** — every `§N` cross-reference and appendix letter
-  (A–N) the diff touches resolves to the right target. When a number or letter moved, every
+  (A–O) the diff touches resolves to the right target. When a number or letter moved, every
   reference to it moved too. This is the single easiest thing to break here.
 - **CLAUDE.md stays lean** — if the diff touched it, it has not accreted rules that belong
   in `docs/` or `.claude/`.

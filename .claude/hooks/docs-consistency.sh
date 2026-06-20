@@ -4,7 +4,8 @@
 # Catches, at edit time, two defect classes the code-reviewer keeps finding by
 # hand in the product docs:
 #   A) dangling cross-references — a §N or "Appendix X" that points at no real
-#      heading, validated against docs/methodology.md's actual headings; and
+#      heading (sections validated against methodology.md, appendices against
+#      docs/appendices/*.md); and
 #   B) US spellings — the house style is British (-ise); a curated, exact-word
 #      list flags the unambiguous American forms.
 #
@@ -61,18 +62,28 @@ esac
 findings=""
 
 # --- Check A: §N / Appendix-X cross-references resolve to real headings ---
+# Sections are defined in methodology.md; appendices live in docs/appendices/*.md.
+# Each source is optional: if it can't be read, that half of the check is skipped
+# (fail-open) rather than flagging every reference.
 METH="$ROOT/docs/methodology.md"
-if [ -r "$METH" ]; then
-  valid_sections=$(grep -oE '^## [0-9]+\.' "$METH" | grep -oE '[0-9]+' | sort -un)
-  valid_appendices=$(grep -oE '^## Appendix [A-Z]' "$METH" | grep -oE '[A-Z]$' | sort -u)
+APPENDIX_DIR="$ROOT/docs/appendices"
 
+valid_sections=""
+[ -r "$METH" ] && valid_sections=$(grep -oE '^## [0-9]+\.' "$METH" | grep -oE '[0-9]+' | sort -un)
+
+valid_appendices=""
+[ -d "$APPENDIX_DIR" ] && valid_appendices=$(grep -hoE '^## Appendix [A-Z]' "$APPENDIX_DIR"/*.md 2>/dev/null | grep -oE '[A-Z]$' | sort -u)
+
+if [ -n "$valid_sections" ]; then
   for n in $(grep -oE '§[0-9]+' "$FILE" | grep -oE '[0-9]+' | sort -un); do
     if ! printf '%s\n' $valid_sections | grep -qx "$n"; then
       lines=$(grep -nE "§${n}([^0-9]|$)" "$FILE" | cut -d: -f1 | paste -sd ',' -)
       findings="${findings}  dangling reference §${n} — no such section (line ${lines})\n"
     fi
   done
+fi
 
+if [ -n "$valid_appendices" ]; then
   for L in $(grep -oE 'Appendix [A-Z]' "$FILE" | grep -oE '[A-Z]$' | sort -u); do
     if ! printf '%s\n' $valid_appendices | grep -qx "$L"; then
       lines=$(grep -nE "Appendix ${L}([^A-Z]|$)" "$FILE" | cut -d: -f1 | paste -sd ',' -)
@@ -97,7 +108,7 @@ if [ -n "$findings" ]; then
   {
     echo "docs-consistency: issues in ${REL}:"
     printf '%b' "$findings"
-    echo "Fix these, or proceed if a flag is a false positive. §/appendix refs must resolve to docs/methodology.md headings; prose is British English."
+    echo "Fix these, or proceed if a flag is a false positive. § refs must resolve to methodology.md sections and Appendix refs to docs/appendices/ headings; prose is British English."
   } >&2
   exit 2
 fi

@@ -10,7 +10,7 @@ Work read-only until I approve a plan. Do not edit files.
    `docs/plans/` (if any). Delegate breadth to the Explore agent, but restate the
    load-bearing invariant in the prompt — Explore skips CLAUDE.md (§1): this is a
    documentation project, so changes must hold British English and keep the
-   methodology internally consistent (§N cross-references and appendix letters A–N).
+   methodology internally consistent (§N cross-references and appendix letters A–O).
 2. Size the task. A single-section wording fix needs no plan — say so and recommend
    skipping the ceremony. Plan first when the change spans multiple docs, renumbers or
    re-letters anything, or touches an invariant in CLAUDE.md.
