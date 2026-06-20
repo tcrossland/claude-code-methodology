@@ -44,20 +44,19 @@ Enter plan mode for: $ARGUMENTS
 
 Work read-only until I approve a plan. Do not edit files.
 
-1. Explore first. Delegate breadth to the Explore agent, but restate any invariant it
-   must respect in the prompt — Explore skips CLAUDE.md (§1). Read the active plan in
-   docs/plans/ and the relevant CLAUDE.md invariants yourself before proposing anything.
-2. Size the task. Plan first when the approach isn't obvious — a refactor, an architectural
-   choice, or anything touching an invariant. If it is a one-line or single-file change with no
-   invariant in play, say so and recommend skipping the ceremony — do not manufacture stages for
-   trivial work.
-3. Otherwise draft a plan: goal, ordered stages, per-stage steps with acceptance
-   criteria, and an explicit out-of-scope list.
-4. Challenge it before presenting (§2): argue why this might not be worth building, and
-   find the holes in the acceptance criteria. Fold what survives back into the plan.
-5. Present the plan through the exit-plan tool. On approval, if the work is multi-stage
-   or will not finish this session, write it to docs/plans/<name>.md (Appendix D) and
-   update the active-plan pointer (§3) to name it.
+1. Explore, read-only. Read the active plan in docs/plans/ and the invariants in CLAUDE.md
+   yourself; delegate wider search to the Explore agent, restating any invariant it must respect
+   (it skips CLAUDE.md, §1).
+2. Decide whether to plan. Skip the ceremony for trivial work: a one-line or single-file change
+   with no invariant in play. Say so and stop. Otherwise (a refactor, an architectural choice,
+   or anything touching an invariant) continue.
+3. Draft the plan: goal, ordered stages, per-stage steps with acceptance criteria, and an
+   explicit out-of-scope list.
+4. Challenge it before presenting (§2): argue why it might not be worth doing, and find the holes
+   in the acceptance criteria. Fold what survives back in.
+5. Present through the exit-plan tool. On approval, if the work is multi-stage or won't finish
+   this session, write it to docs/plans/<name>.md (Appendix D) and update the active-plan
+   pointer (§3) to name it.
 ```
 
 ## Appendix K — `/accept` command

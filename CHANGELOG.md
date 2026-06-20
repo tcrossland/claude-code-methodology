@@ -23,6 +23,8 @@ versions follow SemVer.
 - Relaxed the plan-first trigger (§2, the §5 matrix, and the Appendix J `/plan` drop-in): plan
   when the approach is non-obvious (a refactor, an architectural choice, or an invariant), not at
   a raw `>3 files` count, which fired too eagerly for mechanically clear multi-file work.
+- Restructured the `/plan` command (Appendix J) so step 2 *decides* whether to plan and step 3
+  *drafts* it, removing the overlap where both gated the same decision.
 
 ## [0.1.0] — 20/06/2026
 
